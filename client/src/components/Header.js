@@ -52,17 +52,17 @@ function Header() {
                 <Button variant="outline-success">Search</Button>
               </Form>
               <Nav className="d-flex ms-4 py-1">
-                <Nav.Link href="/content">Content</Nav.Link>
+                <Nav.Link href="/content">Create Content</Nav.Link>
                 {/* <Nav.Link href="/profile">Profile</Nav.Link> */}
                 {isAuthenticated && (
                   <NavDropdown
                     align={{ lg: "end" }}
-                    title="Profile"
+                    title={user.name}
                     // id="dropdown-menu-align-responsive-1"
                   >
-                    <NavDropdown.Item href="/profile">Details</NavDropdown.Item>
+                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/comments">
-                      User Comments
+                      Your Comments
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={() => logoutWithRedirect()}>

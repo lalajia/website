@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const Content = () => {
+const ShowContent = () => {
   const [contents, setContents] = useState([]);
-  const [newTitle, setNewTitle] = useState("");
-  const [newBody, setNewBody] = useState("");
   useEffect(() => {
     async function fetchContent() {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/content`);
@@ -29,4 +27,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default ShowContent;
