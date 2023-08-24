@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
 
-const ShowContent = () => {
-  const [contents, setContents] = useState([]);
-  useEffect(() => {
-    async function fetchContent() {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/content`);
-      const data = await response.json();
-      setContents(data);
-    }
-    fetchContent();
-  }, []);
+const ShowContent = ({ contents }) => {
+  // const [contents, setContents] = useState([]);
+
   return (
-    <div>
+    <div className="container-lg">
       <h2>Content</h2>
 
       {/* Render the fetched contents */}
       <ul>
         {contents.map((content) => (
-          <li key={content.id}>
-            <h3>{content.title}</h3>
-            <p>{content.body}</p>
-          </li>
+          <ListGroup key={content.id}>
+            <ListGroup.Item>
+              <h3>{content.title}</h3>
+            </ListGroup.Item>
+            <ListGroup.Item variant="info">
+              <p style={{ whiteSpace: "normal" }}>{content.body}</p>
+            </ListGroup.Item>
+          </ListGroup>
         ))}
       </ul>
     </div>

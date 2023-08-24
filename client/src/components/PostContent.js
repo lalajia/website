@@ -6,8 +6,8 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import ReactTextareaAutosize from "react-textarea-autosize";
 
-const PostContent = () => {
-  const [contents, setContents] = useState([]);
+const PostContent = ({ contents, setContents }) => {
+  //   const [contents, setContents] = useState([]);
   const [newTitle, setNewTitle] = useState("");
   const [newBody, setNewBody] = useState("");
 
@@ -37,9 +37,6 @@ const PostContent = () => {
     }
   }
   return (
-    //   <div class="row">
-    //
-    //
     <div>
       <Row>
         <Col

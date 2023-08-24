@@ -1,11 +1,21 @@
+import React, { useEffect, useState } from "react";
 import ShowContent from "../components/ShowContent";
 import Header from "../components/Header";
 // import NavBar from "../components/NavBar";
 import Carousel from "../components/Carousel";
-import PostContent from "../components/PostContent";
-import CreateContent from "./CreateContent";
+import { fetchContentData } from "../utilities/fetchContent";
 
 const Home = () => {
+  const [contents, setContents] = useState([]);
+
+  useEffect(() => {
+    async function fetchContent() {
+      const data = await fetchContentData();
+      setContents(data);
+    }
+    fetchContent();
+  }, []);
+
   return (
     <div>
       <div className="container-fluid sticky-top">
@@ -15,7 +25,7 @@ const Home = () => {
       <div className="container-lg">
         {/* <NavBar></NavBar> */}
         <Carousel></Carousel>
-        <ShowContent></ShowContent>
+        <ShowContent contents={contents}></ShowContent>
       </div>
     </div>
   );
