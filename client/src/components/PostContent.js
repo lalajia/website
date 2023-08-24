@@ -67,7 +67,7 @@ const PostContent = ({ contents, setContents }) => {
           {/* </div>
           </Nav> */}
         </Col>
-        <Col md={9} sm className="px-4">
+        <Col md={9} className="px-4">
           <div className="d-flex justify-content-between flex-wrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             Text Post
           </div>
