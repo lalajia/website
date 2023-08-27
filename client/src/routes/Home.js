@@ -4,6 +4,7 @@ import Header from "../components/Header";
 // import NavBar from "../components/NavBar";
 import Carousel from "../components/Carousel";
 import { fetchContentData } from "../utilities/fetchContent";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [contents, setContents] = useState([]);
@@ -26,6 +27,11 @@ const Home = () => {
         {/* <NavBar></NavBar> */}
         <Carousel></Carousel>
         <ShowContent contents={contents}></ShowContent>
+      </div>
+
+      <div className="container-fluid">
+        <hr></hr>
+        <Footer></Footer>
       </div>
     </div>
   );

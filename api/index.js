@@ -177,9 +177,9 @@ app.get("/me", requireAuth, async (req, res) => {
     },
   });
 
-  user.comments = await prisma.comment.findMany({
-    where: { userId: parseInt(user.id) },
-  });
+  // user.comments = await prisma.comment.findMany({
+  //   where: { userId: parseInt(user.id) },
+  // });
 
   res.json(user);
 });

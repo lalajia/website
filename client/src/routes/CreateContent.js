@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import PostContent from "../components/PostContent";
 import ShowContent from "../components/ShowContent";
 import { fetchContentData } from "../utilities/fetchContent";
+import Footer from "../components/Footer";
 
 const CreateContent = () => {
   const [contents, setContents] = useState([]);
@@ -17,13 +18,19 @@ const CreateContent = () => {
 
   return (
     <div>
-      <Header></Header>
+      <div className="container-fluid">
+        <Header></Header>
+      </div>
       <div className="container-lg">
         <PostContent
           contents={contents}
           setContents={setContents}
         ></PostContent>
         <ShowContent contents={contents}></ShowContent>
+      </div>
+      <div className="container-fluid">
+        <hr></hr>
+        <Footer></Footer>
       </div>
     </div>
   );

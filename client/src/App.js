@@ -5,6 +5,9 @@ import Home from "./routes/Home";
 import Profile from "./routes/Profile";
 import MyComments from "./routes/MyComments";
 import CreateContent from "./routes/CreateContent";
+import ContentDetails from "./components/ContentDetails";
+import VerifyUser from "./components/VerifyUser";
+import NotFound from "./components/NotFound";
 
 function App() {
   function RequireAuth({ children }) {
@@ -22,15 +25,25 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/verify-user" element={<VerifyUser />} />
           <Route path="/content" element={<CreateContent />} />
           <Route
-            path="/profile"
+            path="/auth/content"
             element={
               <RequireAuth>
-                <Profile />
+                <CreateContent />
               </RequireAuth>
             }
           />
+          <Route
+            path="/auth/detail/:id"
+            element={
+              <RequireAuth>
+                <ContentDetails />
+              </RequireAuth>
+            }
+          />
+          <Route path="/profile" element={<Profile />} />
           <Route
             path="/comment"
             element={
@@ -39,6 +52,7 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthTokenProvider>

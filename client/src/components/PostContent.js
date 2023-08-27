@@ -41,7 +41,7 @@ const PostContent = ({ contents, setContents }) => {
       <Row>
         <Col
           md={3}
-          lg={2}
+          lg={3}
           className="d-md-block bg-info sidebar position-sticky pt-3"
         >
           {/* <Nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
@@ -49,9 +49,9 @@ const PostContent = ({ contents, setContents }) => {
           <Nav.Item>
             <Nav.Link active>New Text Post</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Nav.Link active>New Picture Post</Nav.Link>
-          </Nav.Item>
+          </Nav.Item> */}
           {/*<Nav.Item>
             <Nav.Link>Products</Nav.Link>
           </Nav.Item>
@@ -82,11 +82,11 @@ const PostContent = ({ contents, setContents }) => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formText">
+            <Form.Group controlId="formText" className="mb-2">
               <Form.Label>Your Thought</Form.Label>
               <ReactTextareaAutosize
                 className="form-control textarea-autosize"
-                minRows={1}
+                minRows={3}
                 placeholder="Type your thought today..."
                 value={newBody}
                 onChange={(e) => setNewBody(e.target.value)}

@@ -44,6 +44,7 @@ function Header() {
             <Offcanvas.Body className="justify-content-end">
               <Form className="d-flex py-2 ms-4">
                 <Form.Control
+                  id="search-bar"
                   type="search"
                   placeholder="Search"
                   className="me-2"
