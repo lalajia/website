@@ -1,19 +1,25 @@
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useAuthToken } from "../AuthTokenContext";
+import { useAuthToken } from "../utilities/AuthTokenContext";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 let id = null;
 
-export default function AuthProfile() {
+const AuthProfile = () => {
   const { user, isAuthenticated } = useAuth0();
   const { accessToken } = useAuthToken();
   const [comments, setComments] = useState([]);
   const navigate = useNavigate();
 
+  // console.log("user:", user);
+  // console.log("accessToken:", accessToken);
+
   useEffect(() => {
-    fetchProfile();
-  }, [[isAuthenticated && user.sub]]);
+    if (user && user.sub && accessToken) {
+      fetchProfile();
+    }
+  }, [user, accessToken]);
 
   const fetchProfile = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/me`, {
@@ -24,8 +30,8 @@ export default function AuthProfile() {
       },
     });
     const data = await response.json();
-    setComments(data.comments);
-    id = data.id;
+    // setComments(data.comments);
+    // id = data.id;
   };
 
   return (
@@ -64,7 +70,9 @@ export default function AuthProfile() {
         </div>
         <div>
           <h2>Comments</h2>
-          <ul>
+          <li>hello</li>
+          <li>hi</li>
+          {/* <ul>
             {comments.map((comment) => (
               <li key={comment.id}>
                 <div>{comment.body}</div>
@@ -76,9 +84,11 @@ export default function AuthProfile() {
                 </p>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     )
   );
-}
+};
+
+export default AuthProfile;

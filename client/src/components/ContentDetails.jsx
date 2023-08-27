@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useAuthToken } from "../AuthTokenContext"
+import { useAuthToken } from "../utilities/AuthTokenContext"
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 

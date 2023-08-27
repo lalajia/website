@@ -18,21 +18,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <div className="container-fluid sticky-top">
-        <Header></Header>
+    <div className="app-container">
+      <Header />
+      <div className="content">
+        <div className="container-lg">
+          {/* <NavBar></NavBar> */}
+          <Carousel></Carousel>
+          <ShowContent contents={contents}></ShowContent>
+        </div>
       </div>
-
-      <div className="container-lg">
-        {/* <NavBar></NavBar> */}
-        <Carousel></Carousel>
-        <ShowContent contents={contents}></ShowContent>
-      </div>
-
-      <div className="container-fluid">
-        <hr></hr>
-        <Footer></Footer>
-      </div>
+      <Footer />
     </div>
   );
 };

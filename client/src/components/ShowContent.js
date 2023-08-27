@@ -3,14 +3,14 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { User, useAuth0 } from "@auth0/auth0-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { fetchContentData } from "../utilities/fetchContent";
-import { useAuthToken } from "../AuthTokenContext";
+import { useAuthToken } from "../utilities/AuthTokenContext";
 
 const ShowContent = ({ contents }) => {
   const { user } = useAuth0();
   const navigate = useNavigate();
-  const params = useLocation();
-  const token = useAuthToken();
-  const [name, setName] = useState("");
+  // const params = useLocation();
+  // const token = useAuthToken();
+  // const [name, setName] = useState("");
   // const [contents, setContents] = useState([]);
 
   // useEffect(() => {

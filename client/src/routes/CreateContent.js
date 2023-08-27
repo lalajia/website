@@ -18,18 +18,18 @@ const CreateContent = () => {
 
   return (
     <div>
-      <div className="container-fluid">
+      <div className="app-container">
         <Header></Header>
-      </div>
-      <div className="container-lg">
-        <PostContent
-          contents={contents}
-          setContents={setContents}
-        ></PostContent>
-        <ShowContent contents={contents}></ShowContent>
-      </div>
-      <div className="container-fluid">
-        <hr></hr>
+        <div className="content">
+          <div className="container-lg">
+            <PostContent
+              contents={contents}
+              setContents={setContents}
+            ></PostContent>
+            <ShowContent contents={contents}></ShowContent>
+          </div>
+        </div>
+        {/* <hr></hr> */}
         <Footer></Footer>
       </div>
     </div>

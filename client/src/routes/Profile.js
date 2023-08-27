@@ -6,12 +6,11 @@ import AuthProfile from "../components/AuthProfile";
 const Profile = () => {
   return (
     <div>
-      <div className="container-fluid sticky-top">
+      <div className="app-container">
         <Header></Header>
-      </div>
-      <AuthProfile></AuthProfile>
-      <div className="container-fluid">
-        <hr></hr>
+        <div className="content">
+          <AuthProfile></AuthProfile>
+        </div>
         <Footer></Footer>
       </div>
     </div>
